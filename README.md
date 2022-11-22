@@ -8,7 +8,7 @@ Computer Version:
 
 > <strong> Projecto de pedido de cliente, usamos node js express para backend - frontend. </strong>
 
-<img src="Capture.png" width="350" alt="proyect"/>
+<img src="Capture.PNG" width="350" alt="proyect"/>
 
 [![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express)](https://expressjs.com/es/)
 [![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://www.javascript.com/)
