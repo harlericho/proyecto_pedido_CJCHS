@@ -19,10 +19,10 @@ const app = new (function () {
                   <td>
                       <button class="btn btn-danger btn-sm" onclick="app.eliminar('${
                         element.id
-                      }')">Delete</button>
+                      }')">Eliminar</button>
                       <button class="btn btn-info text-white btn-sm" onclick="app.editar('${
                         element.id
-                      }')">Edit</button>
+                      }')">Editar</button>
                   </td>
               </tr>
           `;
@@ -52,7 +52,8 @@ const app = new (function () {
       id_pedido_cliente: form.get("id_pedido_cliente"),
     };
     if (form.get("id_pedido_cliente") == null) {
-      return alert("Seleccione un cliente..!");
+      alert("Seleccione un cliente..!");
+      return document.getElementById("id_pedido_cliente").focus();
     }
     if (this.id.value == "") {
       fetch("/api/pedidos", {

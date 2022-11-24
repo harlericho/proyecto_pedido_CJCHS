@@ -26,7 +26,7 @@ Computer Version:
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
 <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
 
-Para usar en su máquina local el proyecto debe tener los siguiente:
+Para usar en su máquina local, el proyecto debe tener lo siguiente:
 
 - Tener instalado NODE JS en la version 14 en adelante y MYSQL version 5.8.
 
@@ -34,13 +34,13 @@ Para usar en su máquina local el proyecto debe tener los siguiente:
 
 <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
 
-Antes de usar el proyecto <proyecto_pedido_CJCHS>, usted debe seguir los siguiente pasos:
+Antes de usar el proyecto <proyecto_pedido_CJCHS>, usted debe seguir los siguientes pasos:
 
 1. Importar el script de la base de datos en su gestor de MYSQL, este script se encuentra en la ruta del proyecto:
    ```
    db/script.sql
    ```
-2. Crear un archivo de variables de entorno en la raiz del proyecto, aqui coloque las credenciales de conexión de su MYSQL y un puerto por defecto para la ejecución del servidor:
+2. Crear un archivo de variables de entorno <.env> en la raiz del proyecto, aqui coloque las credenciales de conexión de su MYSQL y un puerto por defecto para la ejecución del servidor:
    ```
    PORT=9000
    DB_HOST=localhost
@@ -54,7 +54,7 @@ Antes de usar el proyecto <proyecto_pedido_CJCHS>, usted debe seguir los siguien
 
 <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
 
-Para iniciar el servidor del proyecto <proyecto_pedido_CJCHS>, usted debe realizar lo siguientes pasos:
+Para iniciar el servidor del proyecto <proyecto_pedido_CJCHS>, usted debe realizar los siguientes pasos:
 
 1. Abrir una terminal en la raiz del proyecto.
 2. En la raiz del proyecto ejecute lo siguiente:

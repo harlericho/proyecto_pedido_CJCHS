@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// rutas de pedidos
+// rutas apps
 const router = require("./api");
 app.use(router);
 
