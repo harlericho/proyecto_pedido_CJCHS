@@ -20,12 +20,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(favicon(path.join("public", "/img/favicon.ico")));
 
-// ruta inicial de la vista
+// ruta iniciales de la vista
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/cliente", (req, res) => {
+  res.render("cliente");
+});
 
-// rutas apps
+// rutas de controladores de la app
 const router = require("./api");
 app.use(router);
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PEDIDOS</title>
+    <title>CLIENTES</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -40,7 +40,7 @@
               <a class="nav-link active" aria-current="page" href="/">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cliente">Clientes</a>
+              <a class="nav-link" href="">Clientes</a>
             </li>
           </ul>
         </div>
@@ -49,72 +49,19 @@
     <div class="container">
       <div class="row justify-content-center g-2 p-5">
         <h4 class="display-4">
-          <img src="/img/listado.png" alt="icon tarea" width="80px" />
-          Pedidos
+          <img src="/img/clientes.png" alt="icon tarea" width="80px" />
+          Clientes
         </h4>
-        <div class="col-sm-4">
+        <div class="col-sm-12">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Formulario pedidos</h5>
-              <form
-                action="javascript:void(0);"
-                method="post"
-                id="formularioPedido"
-                onsubmit="app.guardar()"
-              >
-                <div class="mb-3">
-                  <input type="hidden" id="id" name="id" />
-                </div>
-                <div class="mb-3">
-                  <div id="selector"></div>
-                </div>
-                <div class="mb-3">
-                  <label for="autor" class="form-label">Código</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="codigo"
-                    name="codigo"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="fecha" class="form-label">Fecha</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="fecha"
-                    name="fecha"
-                    required
-                  />
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-sm">
-                  Crear
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-secondary btn-sm"
-                  onclick="app.limpiar()"
-                >
-                  Nuevo
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Listado pedidos</h5>
+              <h5 class="card-title">Listado clientes</h5>
               <div class="table table-responsive">
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">Código</th>
-                      <th scope="col">Fecha</th>
-                      <th scope="col">Cliente</th>
-                      <th scope="col" colspan="2">Opciones</th>
+                      <th scope="col">Dni o CI</th>
+                      <th scope="col">Nombres</th>
                     </tr>
                   </thead>
                   <tbody id="tbody"></tbody>
@@ -137,6 +84,6 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
-    <script src="/src/code.js"></script>
+    <script src="/src/cliente.js"></script>
   </body>
 </html>
