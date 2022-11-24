@@ -1,27 +1,69 @@
-CREATE DATABASE db_pedidos;
-USE db_pedidos;
+CREATE DATABASE `db_pedidos`;
+USE `db_pedidos`;
+CREATE TABLE `cliente` (
+  `id` int NOT NULL,
+  `dni` varchar(15) NOT NULL,
+  `nombres` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-DROP TABLE IF EXISTS cliente;
-DROP TABLE IF EXISTS pedido;
+--
+-- Dumping data for table `cliente`
+--
 
-
-CREATE TABLE cliente (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-dni VARCHAR(15) NOT NULL,
-nombres VARCHAR(50) NOT NULL);
-
-CREATE TABLE pedido (
-id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-codigo VARCHAR(6) NOT NULL,
-fecha DATE NOT NULL,
-id_pedido_cliente INT NOT NULL);
-
-ALTER TABLE pedido ADD CONSTRAINT pedido_id_pedido_cliente_cliente_id FOREIGN KEY (id_pedido_cliente) REFERENCES cliente(id);
-
-INSERT INTO cliente (id, dni, nombres) VALUES
+INSERT INTO `cliente` (`id`, `dni`, `nombres`) VALUES
 (1, '1001001001', 'carlos'),
 (2, '2002002002', 'mary');
 
-INSERT INTO pedido (id, codigo, fecha, id_pedido_cliente) VALUES
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pedido`
+--
+
+CREATE TABLE `pedido` (
+  `id` int NOT NULL,
+  `codigo` varchar(6) NOT NULL,
+  `fecha` date NOT NULL,
+  `id_pedido_cliente` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `pedido`
+--
+
+INSERT INTO `pedido` (`id`, `codigo`, `fecha`, `id_pedido_cliente`) VALUES
 (1, '001', '2022-11-22', 1),
-(2, '003', '2022-11-22', 2);
+(2, '002', '2022-11-22', 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT for table `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+COMMIT;
