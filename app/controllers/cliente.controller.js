@@ -15,6 +15,22 @@ const clientes = async (req, res) => {
   }
 };
 
+const clienteGuardar = async (req, res) => {
+  try {
+    const cliente = req.body;
+    const sql = "INSERT INTO cliente SET ?";
+    await connection.query(sql, cliente, (error, data) => {
+      if (error) throw error;
+      res.json("Creado..!");
+    });
+  } catch (error) {
+    console.log(
+      "❌ ~ file: cliente.controller.js ~ line 28 ~ clientes ~ error",
+      error
+    );
+  }
+};
 module.exports = {
   clientes,
+  clienteGuardar,
 };

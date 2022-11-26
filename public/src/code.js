@@ -109,20 +109,43 @@ const app = new (function () {
   };
 
   this.eliminar = (id) => {
-    if (confirm("¿Desea eliminar este registro?")) {
-      fetch("/api/pedidos/" + id, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          this.listado();
-          alert(data);
+    Swal.fire({
+      title: "Está seguro de eliminarlo?",
+      text: "No se podrá recuperar el dato eliminado!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("/api/pedidos/" + id, {
+          method: "DELETE",
         })
-        .catch((err) => console.log(err));
-    }
+          .then((res) => res.json())
+          .then((data) => {
+            this.listado();
+            // alert(data);
+            Swal.fire("Listo!", data, "success");
+          })
+          .catch((err) => console.log(err));
+      }
+    });
+    // if (confirm("¿Desea eliminar este registro?")) {
+    //   fetch("/api/pedidos/" + id, {
+    //     method: "DELETE",
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       this.listado();
+    //       alert(data);
+    //     })
+    //     .catch((err) => console.log(err));
+    // }
   };
   this.limpiar = () => {
     document.getElementById("formularioPedido").reset();
+    this.id.value = "";
     document.getElementById("id_pedido_cliente").focus();
   };
 

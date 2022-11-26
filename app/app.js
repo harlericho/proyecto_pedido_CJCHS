@@ -32,5 +32,9 @@ app.get("/cliente", (req, res) => {
 const router = require("./api");
 app.use(router);
 
+// ruta de error 404 página no encontrada
+app.use("/", (req, res) => {
+  res.status(404).render("404");
+});
 // Exportamos el modulo
 module.exports = app;
