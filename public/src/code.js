@@ -93,16 +93,16 @@ const app = new (function () {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
-        var fecha = new Date(data.fecha).toLocaleDateString();
+        // console.log(data[0]["id"]);
+        var fecha = new Date(data[0].fecha).toLocaleDateString();
         fecha = fecha.split("/");
         fecha = fecha[2] + "-" + fecha[0] + "-" + fecha[1];
         // console.log(fecha);
-        this.id.value = data.id;
-        this.codigo.value = data.codigo;
+        this.id.value = data[0].id;
+        this.codigo.value = data[0].codigo;
         this.fecha.value = fecha;
         document.getElementById("id_pedido_cliente").value =
-          data.id_pedido_cliente;
+          data[0].id_pedido_cliente;
         this.codigo.focus;
       })
       .catch((err) => console.log(err));
